@@ -27,4 +27,5 @@ In file included from /home/xilm/anaconda3/lib/python3.9/site-packages/numpy/cor
       |  ^~~~~~~
 gcc -pthread -B /home/xilm/anaconda3/compiler_compat -shared -Wl,-rpath,/home/xilm/anaconda3/lib -Wl,-rpath-link,/home/xilm/anaconda3/lib -L/home/xilm/anaconda3/lib -L/home/xilm/anaconda3/lib -Wl,-rpath,/home/xilm/anaconda3/lib -Wl,-rpath-link,/home/xilm/anaconda3/lib -L/home/xilm/anaconda3/lib build/temp.linux-x86_64-3.9/./box_overlaps.o -o /home/xilm/fuxian/voxelnet_pytorch-master/box_overlaps.cpython-39-x86_64-linux-gnu.so
 ```  
+运行完成后生成`box_overlaps.cpython-39-x86_64-linux-gnu.so`文件。  
 2. PointNet: [Pytorch实现](https://github.com/fxia22/pointnet.pytorch)  
