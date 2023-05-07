@@ -30,4 +30,9 @@ gcc -pthread -B /home/xilm/anaconda3/compiler_compat -shared -Wl,-rpath,/home/xi
 运行完成后生成`box_overlaps.cpython-39-x86_64-linux-gnu.so`文件。  
 - 接着在终端输入`python train.py --index 30 --epoch 30`就可以开始训练了；  
 - 突然发现，tensorboard文件最后的数字中，包含端口号信息，比如`events.out.tfevents.1683438487.xilm-MS-7D17.12148.0`就表示端口号是`12148`;  
+- 运行后，在tensorboard还可以实时显示pred box与gt box的对比：  
+![](https://github.com/XxxuLimei/pointcloud_paper/blob/main/figure/Screenshot%20from%202023-05-07%2018-22-08.png)  
+- 这个训练速度确实是太慢了，跑了三个小时才跑了一个epoch，后面就不准备继续训练了。放了两张训练时的损失下降曲线图。  
+![](https://github.com/XxxuLimei/pointcloud_paper/blob/main/figure/Screenshot%20from%202023-05-07%2018-22-22.png)  
+![](https://github.com/XxxuLimei/pointcloud_paper/blob/main/figure/Screenshot%20from%202023-05-07%2018-22-28.png)  
 2. PointNet: [Pytorch实现](https://github.com/fxia22/pointnet.pytorch)  
