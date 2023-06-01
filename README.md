@@ -36,3 +36,19 @@ gcc -pthread -B /home/xilm/anaconda3/compiler_compat -shared -Wl,-rpath,/home/xi
 ![](https://github.com/XxxuLimei/pointcloud_paper/blob/main/figure/Screenshot%20from%202023-05-07%2018-22-22.png)  
 ![](https://github.com/XxxuLimei/pointcloud_paper/blob/main/figure/Screenshot%20from%202023-05-07%2018-22-28.png)  
 2. PointNet: [Pytorch实现](https://github.com/fxia22/pointnet.pytorch)  
+## 0601：PVRCNN复现及源码阅读  
+1. 关于kitti数据集生成的dbinfos信息：  
+```在Kitti数据集中，dbinfos是一个Python列表，每个元素包含了一个数据样本的相关信息。它是用于描述Kitti数据集中每个样本的数据库信息。
+
+每个样本的dbinfos通常包括以下信息：
+
+point_cloud：点云数据的文件路径或点云数据本身。
+calib：相机和激光雷达之间的标定信息，包括相机内参、外参和激光雷达的参数等。
+image：图像数据的文件路径或图像数据本身。
+lidar_idx：对应于点云数据的索引或标识符。
+image_idx：对应于图像数据的索引或标识符。
+image_shape：图像数据的尺寸，通常是宽度和高度。
+num_points_in_gt：Ground Truth目标中的点云数量。
+gt_boxes：Ground Truth目标的边界框坐标。
+通过访问dbinfos中的元素，可以获取每个数据样本的具体信息，如点云数据路径、图像数据路径、标定信息和目标边界框等。这些信息对于进行目标检测、目标跟踪和传感器融合等任务非常有用。```  
+2. 
