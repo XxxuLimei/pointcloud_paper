@@ -609,4 +609,7 @@ VoxelNet(
     )
   )
 )
-```  
+```   
+## 0606:  
+1. [KITTI 3D 目标检测排行榜](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)  
+2. 
