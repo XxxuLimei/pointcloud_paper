@@ -612,4 +612,19 @@ VoxelNet(
 ```   
 ## 0606:  
 1. [KITTI 3D 目标检测排行榜](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)  
+# 0610：  
+1. 最近在复现VirConv模型，复现的时候发现没有`semi.txt`，于是自己写了一个脚本，生成了该文件（查看论文发现它使用了10888，即semi中所有的文件来训练，因此直接把文件的name都写入txt即可）。  
+```
+import os
+
+file_path = "/media/xilm/Lenovo/data/kitti/semi/image_2"
+save_path = "/media/xilm/Lenovo/data/kitti/ImageSets/semi.txt"
+file_names = os.listdir(file_path)
+f = open(save_path,"a")
+for file_name in file_names:
+    name = file_name.split(".")[0]
+    f.write(name)
+    f.write("\r\n")
+```  
+- 此时执行`python3 -m pcdet.datasets.kitti.kitti_datasetsemi create_kitti_infos tools/cfgs/dataset_configs/kitti_dataset.yaml`就可以了。  
 2. 
