@@ -612,7 +612,7 @@ VoxelNet(
 ```   
 ## 0606:  
 1. [KITTI 3D 目标检测排行榜](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)  
-# 0610：  
+## 0610：  
 1. 最近在复现VirConv模型，复现的时候发现没有`semi.txt`，于是自己写了一个脚本，生成了该文件（查看论文发现它使用了10888，即semi中所有的文件来训练，因此直接把文件的name都写入txt即可）。  
 ```
 import os
@@ -627,4 +627,36 @@ for file_name in file_names:
     f.write("\r\n")
 ```  
 - 此时执行`python3 -m pcdet.datasets.kitti.kitti_datasetsemi create_kitti_infos tools/cfgs/dataset_configs/kitti_dataset.yaml`就可以了。  
-2. 
+## 0611：  
+1. 实在是解决不了train.py运行时的这个问题了：  
+```
+Traceback (most recent call last):                   | 7/1856 [00:17<54:19,  1.76s/it, total_it=7]
+  File "/home/xilm/fuxian/VirConv/tools/train.py", line 209, in <module>
+    main()
+  File "/home/xilm/fuxian/VirConv/tools/train.py", line 152, in main
+    train_model(
+  File "/home/xilm/fuxian/VirConv/tools/train_utils/train_utils.py", line 95, in train_model
+    accumulated_iter = train_one_epoch(
+  File "/home/xilm/fuxian/VirConv/tools/train_utils/train_utils.py", line 44, in train_one_epoch
+    loss, tb_dict, disp_dict = model_func(model, batch)
+  File "/home/xilm/fuxian/VirConv/pcdet/models/__init__.py", line 32, in model_func
+    ret_dict, tb_dict, disp_dict = model(batch_dict)
+  File "/home/xilm/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/xilm/fuxian/VirConv/pcdet/models/detectors/voxel_rcnn.py", line 10, in forward
+    batch_dict = cur_module(batch_dict)
+  File "/home/xilm/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/xilm/fuxian/VirConv/pcdet/models/backbones_3d/spconv_backbone.py", line 657, in forward
+    newx_conv1 = self.vir_conv1(newinput_sp_tensor, batch_size, calib, 1, self.x_trans_train, trans_param)
+  File "/home/xilm/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/xilm/fuxian/VirConv/pcdet/models/backbones_3d/spconv_backbone.py", line 215, in forward
+    uv_coords, depth = index2uv(d3_feat2.indices, batch_size, calib, stride, x_trans_train, trans_param)
+  File "/home/xilm/fuxian/VirConv/pcdet/models/backbones_3d/spconv_backbone.py", line 71, in index2uv
+    pts_rect = calib[b_i].lidar_to_rect_cuda(cur_pts[:, 0:3])
+  File "/home/xilm/fuxian/VirConv/pcdet/utils/calibration_kitti.py", line 128, in lidar_to_rect_cuda
+    pts_rect = torch.matmul(pts_lidar_hom, torch.matmul(V2C, R0))
+RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+```  
+
