@@ -660,4 +660,5 @@ Traceback (most recent call last):                   | 7/1856 [00:17<54:19,  1.7
 RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
 ```  
 ## 0619:  
-1. [PointRCNN讲解](https://blog.csdn.net/wqwqqwqw1231/article/details/90788500?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.no_search_link&utm_relevant_index=10)  
+1. [PointRCNN讲解](https://blog.csdn.net/wqwqqwqw1231/article/details/90788500?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.no_search_link&utm_relevant_index=10)
+2. [PointRCNN讲解2](https://blog.csdn.net/qingliange/article/details/122379777)  
