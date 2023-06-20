@@ -661,4 +661,6 @@ RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSge
 ```  
 ## 0619:  
 1. [PointRCNN讲解](https://blog.csdn.net/wqwqqwqw1231/article/details/90788500?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.no_search_link&utm_relevant_index=10)
-2. [PointRCNN讲解2](https://blog.csdn.net/qingliange/article/details/122379777)  
+2. [PointRCNN讲解2](https://blog.csdn.net/qingliange/article/details/122379777)
+## 0620：  
+1. [高斯核函数](https://blog.csdn.net/qq_31347869/article/details/101311281)  
